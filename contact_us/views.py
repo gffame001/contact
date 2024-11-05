@@ -21,4 +21,4 @@ class ContactViewset(viewsets.ModelViewSet):
         email.attach_alternative(email_body,"text/html")
         email.send()
 
-        return Response({'message': 'Your message has been sent! Check your email for confirmation.'},status=status.HTTP_201_CREATED)
+        return render("success.html",status=status.HTTP_200_OK)

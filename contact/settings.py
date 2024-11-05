@@ -32,19 +32,22 @@ ALLOWED_HOSTS = ["127.0.0.1", ".vercel.app"]
 
 INSTALLED_APPS = [
     "whitenoise.runserver_nostatic",
+    'corsheaders',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'contact_us',
     'rest_framework',
+    'rest_framework.authtoken',
+    'contact_us',
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     "whitenoise.middleware.WhiteNoiseMiddleware",
+    'corsheaders.middleware.CorsMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -73,6 +76,16 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'contact.wsgi.app'
 
+CORS_ALLOW_ALL_ORIGINS = True 
+
+# CORS_ALLOW_CREDENTIALS = True
+
+# CSRF_TRUSTED_ORIGINS = ['https://exi-pet-3sb271ofo-asirff399s-projects.vercel.app','https://*.127.0.0.1','https://exipet.netlify.app','http://127.0.0.1:5500']
+
+# CORS_ALLOWED_OREGINS = ['http://127.0.0.1:5500','https://exipet.netlify.app']
+# CORS_ORIGIN_WHITELIST = [
+#      'http://127.0.0.1:5500','https://exipet.netlify.app'
+# ]
 
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
