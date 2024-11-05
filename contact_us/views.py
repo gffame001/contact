@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from rest_framework import viewsets
 from .models import Contact
 from .serializers import ContactUsSerializer
@@ -21,4 +21,4 @@ class ContactViewset(viewsets.ModelViewSet):
         email.attach_alternative(email_body,"text/html")
         email.send()
 
-        return render("success.html",status=status.HTTP_200_OK)
+        return Response(status=status.HTTP_201_CREATED)

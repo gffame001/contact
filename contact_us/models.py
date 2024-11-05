@@ -6,7 +6,5 @@ class Contact(models.Model):
     email = models.EmailField()
     message = models.TextField()
 
-    def __str__(self):
-        return {self.name}
     class Meta:
         verbose_name_plural = "Contact Us"
